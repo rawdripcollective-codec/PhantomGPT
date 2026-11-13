@@ -1,0 +1,10 @@
+# Use the device's compiled pydantic; older pydantic-core lacks Python 3.14 support.
+fastapi==0.141.1
+uvicorn==0.34.0
+openai==1.59.9
+httpx[socks]==0.28.1
+dnspython==2.7.0
+pydantic==2.13.4
+python-dotenv==1.0.1
+reportlab==4.2.5
+pillow==12.0.0

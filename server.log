@@ -1,0 +1,97 @@
+INFO:     Started server process [27614]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:33130 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33130 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33130 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33130 - "GET /api/personas HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "GET /api/personas HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "GET /api/net/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "POST /api/chats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "GET /api/export/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57574 - "POST /api/chat HTTP/1.1" 200 OK
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/applications.py", line 96, in __call__
+    await self.app(scope, receive, send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 198, in __call__
+    raise app_exc
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/fastapi/routing.py", line 1281, in handle
+    await super().handle(scope, receive, send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/routing.py", line 280, in handle
+    await self.app(scope, receive, send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/fastapi/routing.py", line 158, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/fastapi/routing.py", line 145, in app
+    await response(scope, receive, send)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/responses.py", line 273, in __call__
+    async with create_collapsing_task_group() as task_group:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.14/contextlib.py", line 235, in __aexit__
+    await self.gen.athrow(value)
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/_utils.py", line 93, in create_collapsing_task_group
+    raise exc from exc.__cause__ or context
+  File "/data/data/com.termux/files/usr/lib/python3.14/packages/anyio/_core/_tasks.py", line 275, in _run_coro
+    retval = await self._coro
+             ^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/starlette/responses.py", line 250, in stream_response
+    async for chunk in self.body_iterator:
+    ...<2 lines>...
+        await send({"type": "http.response.body", "body": chunk, "more_body": True})
+  File "/storage/emulated/0/Download/PhantomGPT/app/main.py", line 158, in gen
+    async for chunk in llm.stream(messages, tools=schemas):
+    ...<13 lines>...
+                slot["args"] += tc.function.arguments
+  File "/storage/emulated/0/Download/PhantomGPT/app/llm.py", line 24, in stream
+    s = await client().chat.completions.create(**kw)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/openai/resources/chat/completions.py", line 1720, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/openai/_base_client.py", line 1849, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/openai/_base_client.py", line 1543, in request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/tmp/phantomgpt-venv/lib/python3.14/site-packages/openai/_base_client.py", line 1644, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - {'error': 'Insufficient USD or Diem balance to complete request. Visit https://venice.ai/settings/api to add credits.'}
+INFO:     127.0.0.1:39470 - "GET /api/chats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39470 - "DELETE /api/chats/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39470 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39470 - "GET /api/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39470 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39470 - "GET /api/builder/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39470 - "GET /api/net/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39470 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     Shutting down
